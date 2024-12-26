@@ -3,9 +3,12 @@ require('dotenv').config();
 const express = require('express');
 const expressEjsLayouts = require('express-ejs-layouts');
 
+const connectDB = require('./server/config/db');
+
 const app = express();
 const PORT = 4000 || process.env.PORT;
 
+connectDB();
 // MIDDLEWARES
 
 app.use(express.static('public'));
